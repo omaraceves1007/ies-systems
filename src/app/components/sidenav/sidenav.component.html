@@ -1,0 +1,14 @@
+  <h3>Menú</h3>
+  <mat-sidenav class="example-container" mode="side" opened>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option (click)="dashboard()" [selected]="isdash">
+        DashBoard
+      </mat-list-option>
+      <mat-list-option (click)="componenteUno()">
+        Componente Uno
+      </mat-list-option>
+      <mat-list-option (click)="logOut()">
+        Cerrar Sesión
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav>

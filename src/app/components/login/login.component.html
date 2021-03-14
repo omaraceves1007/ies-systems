@@ -1,0 +1,26 @@
+<form [formGroup]="editForm">
+  <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+    <div fxFlex="100%">
+      <mat-form-field appearance="fill" class="inp">
+        <mat-label>Usuario</mat-label>
+        <input type="text" formControlName="usuario" matInput>
+        <mat-icon matSuffix color="primary">account_circle</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+    <div fxFlex="100%" fxFlexAlign="center">
+      <mat-form-field appearance="fill" class="inp">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" formControlName="contrasena" matInput>
+        <mat-icon matSuffix color="primary">lock</mat-icon>
+      </mat-form-field>
+    </div>
+  </div>
+  <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+    <div fxFlex="100%" fxFlexAlign="center" class="sing-in">
+      <button mat-raised-button color="primary" class="btn" (click)="login()" [disabled]="!editForm.valid">Iniciar Sesión</button>
+    </div>
+  </div>
+</form>
+<ngx-snackbar [position]="'bottom-center'" [max]="1"></ngx-snackbar>

@@ -1,0 +1,44 @@
+<mat-card>
+  <h2 fxLAyout="row"> Form </h2>
+  <section>
+    <form [formGroup]="editForm">
+      <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>Fecha Reserva</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fechaReserva" [min]='min' [max]='max'>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>Correo</mat-label>
+          <input type="text" matInput formControlName="correo" email>
+          <mat-icon matSuffix>contact_mail</mat-icon>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput formControlName="nombre">
+          <mat-icon matSuffix>face</mat-icon>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+        <mat-form-field appearance="fill" fxFlex="100%">
+          <mat-label>País</mat-label>
+          <mat-select  formControlName="pais">
+            <mat-option *ngFor="let pais of paises" [value]="pais?.code">
+              {{ pais?.country }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxFlexAlign="center center" fxLayout.xs="column" fxLayoutGap="2%">
+        <div fxFlex="100%" fxFlexAlign="center">
+          <button mat-raised-button color="primary" class="btn" (click)="enviar()" [disabled]="!editForm.valid" >Enviar</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</mat-card>
