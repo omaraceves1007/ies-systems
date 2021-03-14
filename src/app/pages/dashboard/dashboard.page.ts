@@ -41,7 +41,7 @@ export class DashboardPage implements OnInit {
 
   validMail(): any {
 
-    this.editForm.get('correo')?.valueChanges.subscribe( value => {console.log(value)
+    this.editForm.get('correo')?.valueChanges.subscribe( value => {
       if( value.includes('gmail') || value.includes('hotmail') ){
         this.editForm.get('correo')?.setErrors( {invalidEmail: true} );
       } else {
